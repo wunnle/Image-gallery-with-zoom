@@ -1,9 +1,25 @@
+
+
 $(function() {
     $(".img-w").each(function() {
         $(this).wrap("<div class='img-c'></div>")
         let imgSrc = $(this).find("img").attr("src");
         $(this).css('background-image', 'url(' + imgSrc + ')');
     })
+
+	$(".img-c").each(function() {
+		let x = $(this).offset().left
+		let y = $(this).offset().top
+		console.log(y)
+
+		let transition = $(this).css("transition");
+		transition += " ,left cubic-bezier(0.4, 0, 0.2, 1) " + Math.round(0.6 * x) + "ms";
+		transition += " ,top cubic-bezier(0.4, 0, 0.2, 1) " + Math.round(0.6 * y) + "ms";
+
+		console.log(transition)
+
+		$(this).css("transition", transition)
+	})
 
     $(".img-c").click(function() {
         let w = $(this).outerWidth()

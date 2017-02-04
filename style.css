@@ -33,11 +33,11 @@ body {
 }
 
 .img-c {
-  transition: width ease 400ms, height ease 350ms, left cubic-bezier(0.4, 0, 0.2, 1) 420ms, top cubic-bezier(0.4, 0, 0.2, 1) 420ms;
+  transition: width ease 240ms, height ease 240ms;
+  will-change: top, left, width, height;
 }
 
 .img-c:hover .img-w {
-  transform: scale(1.08);
   transition: transform cubic-bezier(0.4, 0, 0.2, 1) 450ms;
 }
 
